@@ -1,3 +1,5 @@
+[Ver Código Final](https://github.com/jotavetech/tech4all/tree/main/binary_decimal)
+
 ## Como Funciona a Conversão de Binários Para Decimais?
 
 Para converter um número na base 2 (binário) para um número na base 10 (decimal), multiplicamos cada digito do número binário pela potência de 2 relativa à posição que ele está ocupando:
@@ -53,12 +55,12 @@ Agora, vamos escrever as nossas primeiras linhas do código:
 use std::io;
 
 fn main() {
-	println!("Olá, escreva um número binário: ");
+    println!("Olá, escreva um número binário: ");
 
-	let mut binary_number = String::new();
-	let mut converted_numbers: Vec<u32> = Vec::new();
+    let mut binary_number = String::new();
+    let mut converted_numbers: Vec<u32> = Vec::new();
 
-	io::stdin().read_line(&mut binary_number).unwrap();
+    io::stdin().read_line(&mut binary_number).unwrap();
 }
 ```
 
@@ -74,22 +76,22 @@ Vamos adicionar mais algumas linhas:
 use std::io;
 
 fn main() {
-	println!("Olá, escreva um número binário: ");
+    println!("Olá, escreva um número binário: ");
 
-	let mut binary_number = String::new();
-	let mut converted_numbers: Vec<u32> = Vec::new();
+    let mut binary_number = String::new();
+    let mut converted_numbers: Vec<u32> = Vec::new();
 
-	io::stdin().read_line(&mut binary_number).unwrap();
+    io::stdin().read_line(&mut binary_number).unwrap();
 
-	let mut pos = 0;
+    let mut pos = 0;
 
-	for binary in binary_number.trim().chars().rev() {
-		if binary == '1' {
-			let result = 1 * 2_u32.pow(pos);
-			converted_numbers.push(result);
-		}
-		pos += 1;
-	}
+    for binary in binary_number.trim().chars().rev() {
+	if binary == '1' {
+            let result = 1 * 2_u32.pow(pos);
+            converted_numbers.push(result);
+        }
+        pos += 1;
+    }
 }
 ```
 
@@ -111,39 +113,39 @@ Escrevendo o resto do nosso código, a versão final ficará assim:
 use std::io;
 
 fn main() {
-	println!("Olá, escreva um número binário: ");
+    println!("Olá, escreva um número binário: ");
 
-	let mut binary_number = String::new();
-	let mut converted_numbers: Vec<u32> = Vec::new();
+    let mut binary_number = String::new();
+    let mut converted_numbers: Vec<u32> = Vec::new();
 
-	io::stdin().read_line(&mut binary_number).unwrap();
+    io::stdin().read_line(&mut binary_number).unwrap();
 
-	let mut pos = 0;
+    let mut pos = 0;
 
-	for binary in binary_number.trim().chars().rev() {
-		if binary == '1' {
-			let result = 1 * 2_u32.pow(pos);
-			converted_numbers.push(result);
-		}
-		pos += 1;
+    for binary in binary_number.trim().chars().rev() {
+	if binary == '1' {
+            let result = 1 * 2_u32.pow(pos);
+            converted_numbers.push(result);
 	}
+	pos += 1;
+    }
 
-	let decimal_number = convert_to_decimal(&mut converted_numbers);
+    let decimal_number = convert_to_decimal(&mut converted_numbers);
 
-	println!(
-		"O número binário {} em decimal é {}",
-		binary_number, decimal_number
-	);
+    println!(
+	"O número binário {} em decimal é {}",
+	binary_number, decimal_number
+    );
 }
 
 fn convert_to_decimal(numbers: &mut Vec<u32>) -> u32 {
-	let mut result = 0;
+    let mut result = 0;
 
-	for number in numbers {
-		result += number.clone();
-	}
+    for number in numbers {
+        result += number.clone();
+    }
 
-	result
+    result
 }
 ```
 
@@ -164,6 +166,8 @@ println!(
 	);
 ```
 
+[Código Final](https://github.com/jotavetech/tech4all/tree/main/binary_decimal) Aqui está o código final do artigo de hoje!
+
 ## FIM!
 
 Esse é o primeiro artigo que eu faço, espero que tenham gostado e aprendido algo novo, estou sempre aberto para sugestões e dicas em que posso melhorar <3
@@ -173,6 +177,8 @@ Se curtiu, tenho alguns links que possam interessar:
 [The Rust Book PT-BR](https://github.com/jotavetech/the-rust-book-ptbr), essa é a versão traduzida do livro oficial de Rust, tento simplificar e traduzir pra poder aumentar um pouco do público que quer aprender essa linguagem.
 
 [tech4all](https://github.com/jotavetech/tech4all) Meu repositório onde pretendo guardar os códigos que escrevo nos artigos, como esse. Lá você pode encontrar esse conversor também!
+
+[Código Final](https://github.com/jotavetech/tech4all/tree/main/binary_decimal) Aqui está o código final do artigo de hoje!
 
 [Binário para Decimal](https://marco.uminho.pt/~joao/Computacao2/node6.html) Aqui foi onde peguei a explicação sobre como converter binários para decimal.
 
